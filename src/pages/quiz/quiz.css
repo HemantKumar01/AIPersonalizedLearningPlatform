@@ -1,0 +1,74 @@
+.quiz_wrapper .content {
+  padding: 2rem 8rem;
+}
+.question {
+  padding: 4rem;
+  background-color: #d9d9d914;
+  border-radius: 30px;
+  margin-top: 30px;
+  line-height: 1.5;
+}
+.question h3 {
+  color: white;
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+.question .options {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.option {
+  position: relative;
+  width: 100%;
+}
+.option label {
+  line-height: 1.5;
+
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: #484848;
+  padding: 1.5rem 3rem;
+  margin-block: 0.3rem;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  border: 2px solid #484848;
+}
+.option input[type="radio"] {
+  display: none;
+}
+.attempted.correct ~ label {
+  border: 2px solid #00ffe0;
+  color: #00ffe0;
+  background-color: #0c4034;
+}
+input[type="radio"]:checked.wrong ~ label {
+  border: 2px solid #ff3d00;
+  color: #ff3d00;
+  background-color: #311210;
+}
+.optionIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2em;
+  display: none;
+}
+input[type="radio"]:checked ~ .optionIcon {
+  display: block;
+}
+.reason {
+  font-size: 25px;
+  margin-top: 1rem;
+  color: #00ffe0;
+  line-height: 1.5;
+}
+.quiz_wrapper .submit {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

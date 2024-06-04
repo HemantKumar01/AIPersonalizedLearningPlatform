@@ -1,0 +1,15 @@
+header {
+  position: relative;
+}
+header .ProfileAvatar {
+  display: none;
+  position: absolute;
+  right: 5ch;
+  top: 10px;
+}
+
+header .Home {
+  position: absolute;
+  right: 5ch;
+  top: 20px;
+}

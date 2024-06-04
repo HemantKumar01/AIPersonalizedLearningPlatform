@@ -1,0 +1,29 @@
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  background: rgba(255, 255, 255, 0.123);
+  overflow: auto;
+  backdrop-filter: blur(100px);
+}
+.modal-content {
+  position: relative;
+  background-color: #090909;
+  max-width: 90vw;
+  width: 850px;
+  min-height: 500px;
+  border-radius: 60px;
+  padding: 4rem;
+  padding-top: 5rem;
+  margin-block: 1em;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+button.cross {
+  background-color: transparent;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}

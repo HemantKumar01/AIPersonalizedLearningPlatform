@@ -1,0 +1,35 @@
+.loader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000000;
+  background-color: #00000014;
+  backdrop-filter: blur(30px);
+}
+.loader {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.spinner {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  border: 5px solid white;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotate 1.5s linear infinite;
+  margin-bottom: 40px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

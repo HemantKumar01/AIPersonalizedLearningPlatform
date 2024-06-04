@@ -1,0 +1,145 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  flex-direction: column;
+  width: 100%;
+  padding-top: 5rem;
+}
+h2 {
+  color: #c7c7c7;
+}
+.TopicInput {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  width: min(900px, 90vw);
+}
+.TopicInput input {
+  padding-left: 2ch;
+  padding-right: 1.8ch;
+}
+.TopicInput .icon {
+  position: absolute;
+  left: 0;
+  bottom: 0.5em;
+}
+.TopicInput button {
+  position: absolute;
+  right: 0;
+  bottom: 1em;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+h3 {
+  font-weight: 100;
+}
+.suggestions {
+  width: min(900px, 90vw);
+  padding: 1rem;
+}
+.suggestions button {
+  background-color: transparent;
+}
+.suggestionPill {
+  position: relative;
+  filter: brightness(1.5);
+  background-color: var(--clr);
+  color: black !important;
+  padding-inline: 2em;
+  padding-block: 0.8em;
+  border-radius: 500px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #bebebe;
+  transition: 0.5s;
+}
+.suggestionPill .arrow {
+  padding-right: 5ch;
+
+  position: absolute;
+  right: 1ch;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+.suggestionPill:hover .arrow {
+  padding-right: 0;
+}
+.suggestionPill:hover {
+  padding-right: calc(2em + 1ch);
+  padding-left: calc(2em - 1ch);
+}
+.setDetails {
+  padding-top: 2.5rem;
+}
+#timeInput {
+  width: 150px;
+  text-align: right;
+}
+.TimeInput {
+  gap: 3ch;
+}
+.SubmitButton {
+  position: relative;
+  font-size: 30px;
+  padding: 0.5em 3em;
+  border-radius: 500px;
+  margin-top: 1.5em;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  transition: 0.5s;
+  background-color: white;
+  color: white;
+  z-index: 1;
+}
+
+.SubmitButton:hover {
+  background-color: white;
+}
+.SubmitButton::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -2px;
+  left: -2px;
+  border-radius: 500px;
+  background: conic-gradient(
+    #ff6868,
+    #f0ff91,
+    #00e3a3,
+    #00d0ff,
+    #5142ff,
+    #8f00ff,
+    #fa00ff,
+    #ff006b
+  );
+  transition: 0.5s;
+  z-index: -2;
+  /* filter: blur(2px); */
+}
+.SubmitButton::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  border-radius: 500px;
+  background: #151627;
+  transition: 0.5s;
+  z-index: -1;
+}
+.SubmitButton:hover::after {
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  top: -7px;
+  left: -7px;
+  filter: blur(20px);
+}
