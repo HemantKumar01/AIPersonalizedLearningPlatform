@@ -1,12 +1,12 @@
-# Learn Anything Easily With Personalized Learning Paths Using AI
+# 🧑‍💻 Learn Anything Easily With Personalized Learning Paths Using AI
 
 
-Imagine a platform that gives you a detailed personalized roadmap along with resources for any topic that you want to learn, based on your individual needs, time constraints, preferable language, and current knowledge level. This is exactly what our AI-driven web based educational platform aims to deliver.
+Imagine a platform that gives you a detailed personalized roadmap along with resources for any topic that you want to learn, based on your individual needs, time constraints, preferable language, and current knowledge level. This is exactly what our AI-driven web based educational platform delivers.
 
 This platform is built for Ed-Tech Edition of HumanAIze Hackathon powered by YouData.ai
 ![hack2skill humanAIze hackathon](public/hackathon_banner.png)
 
-## Usage
+## Installation
 
 ```bash
 npm install
@@ -15,7 +15,9 @@ cd backend
 pip install -r requirements.txt
 cd ..
 ```
-create `.env` file in `./backend/` directory with the following contents
+
+## Usage 
+create `.env` file in `./backend/` directory with the following contents (get your api key from [here](https://ai.google.dev/aistudio)
 ```bash
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
