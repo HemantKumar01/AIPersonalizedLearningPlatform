@@ -5,9 +5,17 @@ import "./roadmap.css";
 import Header from "../../components/header/header";
 import Loader from "../../components/loader/loader";
 import Modal from "../../components/modal/modal";
-import { CirclePlus, ChevronDown, ChevronRight } from "lucide-react";
+import {
+  CirclePlus,
+  ChevronDown,
+  ChevronRight,
+  LoaderPinwheel,
+  FolderSearch,
+  Bot,
+} from "lucide-react";
 import { translateLocalStorage, translateObj } from "../../translate/translate";
 import Markdown from "react-markdown";
+import ConfettiExplosion from "react-confetti-explosion";
 
 const RoadmapPage = (props) => {
   const [resources, setResources] = useState(null);
@@ -21,6 +29,7 @@ const RoadmapPage = (props) => {
     knowledge_level: "-",
   });
   const [quizStats, setQuizStats] = useState({});
+  const [confettiExplode, setConfettiExplode] = useState(false);
   const navigate = useNavigate();
   const topic = searchParams.get("topic");
   if (!topic) {
@@ -89,11 +98,7 @@ const RoadmapPage = (props) => {
               parseFloat(subtopic.time.replace(/^\D+/g, "")) *
               (parseFloat(localStorage.getItem("hardnessIndex")) || 1)
             ).toFixed(1)}{" "}
-            {"hours"}
-            {console.log(
-              "hardnessIndex",
-              parseFloat(localStorage.getItem("hardnessIndex"))
-            )}
+            {subtopic.time.replace(/[0-9]/g, "")}
           </p>
           <p style={{ fontWeight: "300", opacity: "61%", marginTop: "1em" }}>
             {subtopic.description}
@@ -105,11 +110,13 @@ const RoadmapPage = (props) => {
             let hardness = prompt(
               "Rate Hardness on a rating of 1-10 (where 5 means perfect)"
             );
-            let hardnessIndex =
-              parseFloat(localStorage.getItem("hardnessIndex")) || 1;
-            hardnessIndex = hardnessIndex + (hardness - 5) / 10;
-            localStorage.setItem("hardnessIndex", hardnessIndex);
-            window.location.reload();
+            if (hardness) {
+              let hardnessIndex =
+                parseFloat(localStorage.getItem("hardnessIndex")) || 1;
+              hardnessIndex = hardnessIndex + (hardness - 5) / 10;
+              localStorage.setItem("hardnessIndex", hardnessIndex);
+              window.location.reload();
+            }
           }}
         >
           Rate Hardness
@@ -121,6 +128,7 @@ const RoadmapPage = (props) => {
             onClick={() => {
               setModalOpen(true);
               setResourceParam({
+                subtopic: subtopic.subtopic,
                 description: subtopic.description,
                 time: subtopic.time,
                 course: topic,
@@ -222,6 +230,7 @@ const RoadmapPage = (props) => {
       <div className="flexbox resources">
         <div className="generativeFill">
           <button
+            className="primary"
             onClick={() => {
               setLoading(true);
               axios({
@@ -231,7 +240,16 @@ const RoadmapPage = (props) => {
               })
                 .then((res) => {
                   setLoading(false);
-                  setResources(res.data);
+                  setResources(
+                    <div className="res">
+                      <h2 className="res-heading">{resourceParam.subtopic}</h2>
+                      <Markdown>{res.data}</Markdown>
+                    </div>
+                  );
+                  setTimeout(() => {
+                    setConfettiExplode(true);
+                    console.log("exploding confetti...");
+                  }, 500);
                 })
                 .catch((err) => {
                   setLoading(false);
@@ -240,13 +258,19 @@ const RoadmapPage = (props) => {
                 });
             }}
           >
-            AI Generated Resources
+            <Bot size={70} strokeWidth={1} className="icon"></Bot> AI Generated
+            Resources
           </button>
         </div>
-        OR
+        {/* OR */}
         <div className="databaseFill">
-          <button id="searchWidgetTrigger">
-            Search Resources From Our Database
+          <button className="primary" id="searchWidgetTrigger">
+            <FolderSearch
+              size={70}
+              strokeWidth={1}
+              className="icon"
+            ></FolderSearch>
+            Browse Online Courses
           </button>
         </div>
       </div>
@@ -264,7 +288,13 @@ const RoadmapPage = (props) => {
         {!resources ? (
           <ResourcesSection></ResourcesSection>
         ) : (
-          <Markdown>{resources}</Markdown>
+          <>
+            {confettiExplode && (
+              <ConfettiExplosion zIndex={10000} style={{ margin: "auto" }} />
+            )}
+
+            {resources}
+          </>
         )}
       </Modal>
       <Header></Header>

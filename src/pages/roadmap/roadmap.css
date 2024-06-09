@@ -92,6 +92,7 @@
   color: var(--clr);
   position: absolute;
   right: 0;
+  transform: translateX(100%);
   top: 0;
 }
 .subtopic .buttons button {
@@ -119,21 +120,13 @@
   padding: 1em 0em;
 }
 .resources {
-  flex-direction: column;
+  /* flex-direction: column; */
   height: 100%;
   margin: auto;
   gap: 2em;
-  height: 300px;
+  min-height: 300px;
 }
-.resources button {
-  padding: 1rem 3rem;
-  border-radius: 500px;
-  background-color: rgba(255, 255, 255, 0.253);
-  color: white;
-  font-size: 1.3rem;
-  width: 500px;
-  max-width: 90vw;
-}
+
 .grecaptcha-badge {
   visibility: hidden !important;
 }
@@ -145,4 +138,47 @@
   text-decoration: underline;
   cursor: pointer;
   opacity: 0.35;
+}
+.res {
+  line-height: 1.5;
+  overflow: auto;
+  margin-top: 2.3em;
+}
+.res p {
+  margin-block: 2rem;
+}
+.res-heading {
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  line-height: 1.1em;
+}
+
+.resources button {
+  position: relative;
+  padding: 3rem 3rem;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.253);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: 300px;
+  max-width: 90vw;
+  border: 2px solid white;
+  background-color: transparent;
+  transition: 0.5s;
+}
+.resources button.primary {
+  background-color: white;
+  color: black;
+}
+.resources button:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.03);
+}
+.resources .icon {
+  width: 100%;
+  margin-bottom: 1em;
 }

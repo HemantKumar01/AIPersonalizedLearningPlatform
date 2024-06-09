@@ -115,6 +115,14 @@ const ProfilePage = (props) => {
             <h3>
               Ongoing Courses: <b>{Object.keys(topics).length}</b>
             </h3>
+            <h3>
+              Hardness Index:{" "}
+              <b>
+                {(
+                  parseFloat(localStorage.getItem("hardnessIndex")) || 1
+                ).toFixed(3)}
+              </b>
+            </h3>
           </div>
         </div>
         <div className="newTopic">

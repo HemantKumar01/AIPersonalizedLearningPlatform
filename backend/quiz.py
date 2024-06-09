@@ -24,7 +24,7 @@ def get_quiz(course, topic, subtopic, description):
         "temperature": 1,
         "top_p": 0.95,
         "top_k": 64,
-        "max_output_tokens": 8192,
+        "max_output_tokens": 20000,
         "response_mime_type": "application/json",
     }
     safety_settings = [

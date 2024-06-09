@@ -1,7 +1,6 @@
 from flask import Flask, request
 import roadmap
 import quiz
-import translate
 import generativeResources
 
 api = Flask(__name__)

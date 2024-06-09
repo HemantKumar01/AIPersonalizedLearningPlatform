@@ -1,5 +1,6 @@
 header {
   position: relative;
+  margin-bottom: 3rem;
 }
 header .ProfileAvatar {
   display: none;
@@ -12,4 +13,19 @@ header .Home {
   position: absolute;
   right: 5ch;
   top: 20px;
+}
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-left: 2rem;
+}
+header h1 .x {
+  font-weight: 100;
+  /* font-style: italic; */
+  font-size: 1.8rem;
+  font-family: "Times New Roman", Times, serif;
+}
+.logo {
+  margin-left: 2rem;
+  margin-top: 0.7rem;
 }

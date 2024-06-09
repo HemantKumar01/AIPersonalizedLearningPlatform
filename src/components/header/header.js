@@ -6,6 +6,7 @@ import { translateLocalStorage } from "../../translate/translate";
 const Header = () => {
   return (
     <header>
+      <img src="logo.png" alt="LearnX" height={40} className="logo" />
       <NavLink to="/" className={"Home"}>
         <Home size={40} strokeWidth={1} color="white"></Home>
       </NavLink>

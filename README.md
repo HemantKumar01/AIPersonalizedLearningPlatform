@@ -7,10 +7,6 @@ This platform is built for Ed-Tech Edition of HumanAIze Hackathon powered by You
 ![hack2skill humanAIze hackathon](public/hackathon_banner.png)
 
 ## Usage
-create `.env` file in `./backend/` directory with the following contents
-```bash
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-```
 
 ```bash
 npm install
@@ -18,6 +14,10 @@ cd backend
 .\humanaize\Scripts\activate #or for linux humanaize/bin/activate
 pip install -r requirements.txt
 cd ..
+```
+create `.env` file in `./backend/` directory with the following contents
+```bash
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 then to start backend
 ```bash
