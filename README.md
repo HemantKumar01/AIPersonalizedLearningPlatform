@@ -31,6 +31,7 @@ npm start
 ```
 
 ## Demo Video
+[https://www.youtube.com/watch?v=v-dP18RBArc](https://www.youtube.com/watch?v=v-dP18RBArc)
 [![Demo Video Link](http://img.youtube.com/vi/v-dP18RBArc/0.jpg)](http://www.youtube.com/watch?v=v-dP18RBArc "LearnX : AI based Personalized Learning | Humanaize Hackathon EdTech Edition. Demo Video")
 
 ## What Exactly will this Platform do?
