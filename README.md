@@ -3,9 +3,6 @@
 
 Imagine a platform that gives you a detailed personalized roadmap along with resources for any topic that you want to learn, based on your individual needs, time constraints, preferable language, and current knowledge level. This is exactly what our AI-driven web based educational platform delivers.
 
-This platform is built for Ed-Tech Edition of HumanAIze Hackathon powered by YouData.ai
-![hack2skill humanAIze hackathon](public/hackathon_banner.png)
-
 ## Installation
 
 ```bash
@@ -17,7 +14,7 @@ cd ..
 ```
 
 ## Usage 
-create `.env` file in `./backend/` directory with the following contents (get your api key from [here](https://ai.google.dev/aistudio)
+create `.env` file in `./backend/` directory with the following contents (get your api key from [here](https://ai.google.dev/aistudio) )
 ```bash
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
@@ -29,7 +26,9 @@ and to start frontend
 ```bash
 npm start
 ```
-
+![alt text](public/image.png)
+![alt text](public/image-1.png)
+![alt text](public/image-2.png)
 ## Demo Video
 [https://www.youtube.com/watch?v=v-dP18RBArc](https://www.youtube.com/watch?v=v-dP18RBArc)
 [![Demo Video Link](http://img.youtube.com/vi/v-dP18RBArc/0.jpg)](http://www.youtube.com/watch?v=v-dP18RBArc "LearnX : AI based Personalized Learning | Humanaize Hackathon EdTech Edition. Demo Video")
