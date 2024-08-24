@@ -135,9 +135,15 @@ const QuizPage = (props) => {
       return;
     } else {
       console.log("fetching questions...");
+      axios.defaults.baseURL = "http://localhost:5000";
+
       axios({
         method: "POST",
         url: "/api/quiz",
+        withCredentials: false,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         data: { course, topic, subtopic, description },
       })
         .then((res) => {

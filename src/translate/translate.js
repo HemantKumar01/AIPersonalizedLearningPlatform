@@ -2,7 +2,17 @@ import axios from "axios";
 
 function translate(text, toLang) {
   return new Promise((resolve, reject) => {
-    axios({ method: "POST", url: "/api/translate", data: { text, toLang } })
+    axios.defaults.baseURL = "http://localhost:5000";
+
+    axios({
+      method: "POST",
+      url: "/api/translate",
+      data: { text, toLang },
+      withCredentials: false,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
       .then((res) => {
         resolve(res);
       })

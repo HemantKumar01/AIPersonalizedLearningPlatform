@@ -190,10 +190,15 @@ const TopicPage = (props) => {
           if (!Object.keys(topics).includes(topic)) {
             let data = { topic, time, knowledge_level: knowledgeLevel };
             console.log(data);
+            axios.defaults.baseURL = "http://localhost:5000";
             axios({
               method: "POST",
               url: "/api/roadmap",
               data: data,
+              withCredentials: false,
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+              },
             })
               .then((res) => {
                 topics[topic] = { time, knowledge_level: knowledgeLevel };

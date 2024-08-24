@@ -2,8 +2,10 @@ from flask import Flask, request
 import roadmap
 import quiz
 import generativeResources
+from flask_cors import CORS
 
 api = Flask(__name__)
+CORS(api)
 
 
 @api.route("/api/roadmap", methods=["POST"])

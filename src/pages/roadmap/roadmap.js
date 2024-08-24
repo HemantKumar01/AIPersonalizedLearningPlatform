@@ -233,10 +233,16 @@ const RoadmapPage = (props) => {
             className="primary"
             onClick={() => {
               setLoading(true);
+              axios.defaults.baseURL = "http://localhost:5000";
+
               axios({
                 method: "POST",
                 url: "/api/generate-resource",
                 data: resourceParam,
+                withCredentials: false,
+                headers: {
+                  "Access-Control-Allow-Origin": "*",
+                },
               })
                 .then((res) => {
                   setLoading(false);
