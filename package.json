@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "backend": "cd .\\backend && .\\humanaize\\Scripts\\flask run"
+    "backend": "cd .\\backend && python .\\humanaize\\Scripts\\flask.exe run"
   },
   "eslintConfig": {
     "extends": [
