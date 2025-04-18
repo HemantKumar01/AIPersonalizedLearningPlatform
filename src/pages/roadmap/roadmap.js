@@ -210,7 +210,7 @@ const RoadmapPage = (props) => {
             className="subtopics"
             style={{ display: open ? "block" : "none" }}
           >
-            {subtopics.map((subtopic, i) => (
+            {subtopics?.map((subtopic, i) => (
               <Subtopic
                 subtopic={subtopic}
                 number={i + 1}
