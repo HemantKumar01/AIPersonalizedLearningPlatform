@@ -41,7 +41,6 @@ const RoadmapPage = (props) => {
     setTopicDetails(topics[topic]);
 
     const roadmaps = JSON.parse(localStorage.getItem("roadmaps")) || {};
-
     setRoadmap(roadmaps[topic]);
     // setLoading(true);
     // translateObj(roadmaps[topic], "hi").then((translatedObj) => {
@@ -318,18 +317,22 @@ const RoadmapPage = (props) => {
           </h2>
         </div>
         <div className="roadmap">
-          {Object.keys(roadmap).map((week, i) => {
-            return (
-              <TopicBar
-                weekNum={i + 1}
-                week={week}
-                topic={roadmap[week].topic}
-                subtopics={roadmap[week].subtopics}
-                color={colors[i % colors.length]}
-                quizStats={quizStats[i + 1] || {}}
-              ></TopicBar>
-            );
-          })}
+          {Object.keys(roadmap)
+            .sort(
+              (a, b) => parseInt(a.split(" ")[1]) - parseInt(b.split(" ")[1])
+            )
+            .map((week, i) => {
+              return (
+                <TopicBar
+                  weekNum={i + 1}
+                  week={week}
+                  topic={roadmap[week].topic}
+                  subtopics={roadmap[week].subtopics}
+                  color={colors[i % colors.length]}
+                  quizStats={quizStats[i + 1] || {}}
+                ></TopicBar>
+              );
+            })}
         </div>
       </div>
     </div>
